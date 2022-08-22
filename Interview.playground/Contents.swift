@@ -71,6 +71,19 @@ class ShopImpl: Shop {
     }
     
     func listProductsByName(searchString: String) -> Set<String> {
+        var sequenceNameList:[String:String] = [:]
+        for i in myShop.values {
+            sequenceNameList[i.name] = i.producer
+        }
+        
+        var counter = 0
+        for name1 in sequenceNameList {
+            let new = sequenceNameList.removeValue(forKey: name1.key)
+            if new!.contains(name1.key){
+                
+            }
+        }
+        
         var namesList = Set<String>()
                 for p in myShop {
                     guard namesList.count < 10 else { break }
